@@ -3,6 +3,7 @@ class CreateTasklists < ActiveRecord::Migration[5.1]
     create_table :tasklists do |t|
 
     	t.string :tasklistname
+    	t.date :duedate
 
     	t.timestamps
 

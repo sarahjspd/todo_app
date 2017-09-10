@@ -1,0 +1,19 @@
+<div class="tasksdetail">
+	<h1> Task Details </h1>
+	</div>
+
+	<h3> <%= @tas.taskname %> </h3>
+	<code>Description: </code>
+	<p class="showtext"> <%= @tas.description %></p>
+	<code>Due Date: </code>
+	<p class="showtext"><%= @tas.duedate %></p>
+	<code>Priority: </code>
+	<p class="showtext"><%= @tas.priority %></p>
+	code>Status: </code>
+	<p class="showtext"><%= @tas.status %></p>
+
+	<div class=buttons><%= link_to "Back", tasklist_path(id: @taskli.id) %></div>
+	<div class=buttons><%= link_to "Edit", edit_tasklist_task_path(id: @tas.id) %></div>
+	<!-- why (id: @post.id) because there are 2 ways to do a hash, one way is { _ => _} or {_: _} using a symbol -->
+	<div class=buttons><%= link_to "Back_to_All_Tasks", tasklist_tasks_path(tasklist_id: @taskli.id) %></div>
+	<div class=buttons><%= link_to "Back_to_All_Tasklists", tasklists_path %></div>

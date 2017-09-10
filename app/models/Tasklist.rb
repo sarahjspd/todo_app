@@ -1,5 +1,6 @@
 class Tasklist < ApplicationRecord
 
-		has_many :task
-		
+		has_many :tasks
+		validates(:tasklistname, presence: true)
+
 end

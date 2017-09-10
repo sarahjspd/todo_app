@@ -1,0 +1,32 @@
+<h3> All My Tasks </h3>
+
+<table class="table table-hover">
+	<thead>
+		<th>Task Name</th>
+		<th>Due Date</th>
+		<th>Priority</th>
+		<th>Status</th>
+
+	</thead>
+	
+	<tbody>
+
+	<% @tas.each do |tas| %>
+
+		<tr>
+			<td><%= tas.taskname %></td>
+			<td><%= tas.duedate %></td>
+			<td><%= tas.priority %></td>
+			<td><%= tas.status %></td>
+
+			<td><div class="buttons"><%= link_to "View", tasklist_task_path(id: tas.id) %></div></td>
+		</tr>
+
+	<% end %>
+			
+	</tbody>
+		
+</table>
+
+<div class="buttons"><%= link_to "Create New Task", new_tasklist_task_path %></div>
+<div class=buttons><%= link_to "Back_to_All_Tasklists", tasklists_path %></div>

@@ -1,0 +1,32 @@
+<% if flash[:notice] %>
+
+<div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+<% end %>
+<h3>Edit Me...</h3>
+
+	<%= form_for @taskli, url: tasklist_path(id: @taskli.id), method: :put do |f| %>
+<table class="table table-hover">
+	<thead>	
+		<th>Task List Name</th>
+		<th>Due Date</th>
+
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			  <%= f.text_field :tasklistname %>
+			</td>
+			<td>
+			  <%= f.date_field :duedate %>
+			</td>
+		</tr>
+	</tbody>
+
+	
+</table>
+	<div class="buttons">
+
+	  <%= f.submit "Update" %>
+	 </div>
+	 <div class=buttons><%= link_to "Back_to_All_Tasklists", tasklists_path %></div>
+	<% end %>

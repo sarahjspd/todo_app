@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20170905105019) do
 
   create_table "tasklists", force: :cascade do |t|
     t.string "tasklistname"
+    t.date "duedate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -21,10 +22,13 @@ ActiveRecord::Schema.define(version: 20170905105019) do
   create_table "tasks", force: :cascade do |t|
     t.string "taskname"
     t.text "description"
-    t.datetime "duedate"
+    t.date "duedate"
     t.string "priority"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tasklist_id"
+    t.index ["tasklist_id"], name: "index_tasks_on_tasklist_id"
   end
 
 end
