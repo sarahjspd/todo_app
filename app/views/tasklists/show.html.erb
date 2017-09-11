@@ -28,14 +28,14 @@
 
 		</thead>
 		<tbody>
-		<% @taskli.tasks.each do |tasks| %>
+		<% @taskli.tasks.each do |task| %>
 			<tr>
-				<td><%= tasks.taskname %></td>
-				<td><%= tasks.duedate %></td>
-				<td><%= tasks.priority %></td>
-				<td><%= tasks.status %></td>
-				<td><div class=buttons><%= link_to "View", tasklist_task_path(tasklist_id: @taskli.id) %></div></td>
-				<td><div class=buttons><%= link_to "Delete", tasklist_task_path(tasklist_id: @taskli.id), method: :delete %></div></td>
+				<td><%= task.taskname %></td>
+				<td><%= task.duedate %></td>
+				<td><%= task.priority %></td>
+				<td><%= task.status %></td>
+				<td><div class=buttons><%= link_to "View", tasklist_task_path(tasklist_id: @taskli.id, id: task.id) %></div></td>
+				<td><div class=buttons><%= link_to "Delete", tasklist_task_path(tasklist_id: @taskli.id, id: task.id), method: :delete %></div></td>
 			</tr>
 		<% end %>
 		</tbody>

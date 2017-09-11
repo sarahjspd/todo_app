@@ -26,7 +26,7 @@ class TasklistsController < ApplicationController
 
 	def show
 		@taskli = Tasklist.find_by(id: params[:id])
-		@tas = @taskli.tasks.build
+		@tas = Task.new
 		if @tas.save
 			flash.now[:notice] = "Successfully Created!"
 			redirect_to tasklist_path(id: @taskli.id)

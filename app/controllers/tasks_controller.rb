@@ -15,7 +15,7 @@ class TasksController < ApplicationController
 		@taskli = Tasklist.find(params[:tasklist_id])
 		task_params = params.require(:task).permit(:taskname, :description, :duedate, :priority, :status) 
 		@tas = @taskli.tasks.build(task_params)
-
+# You can uses tasks becos you defined it in the model. When you use tasks.build it stores the tasklist_id from @taskli.
 		if @tas.save
 			flash[:notice] = 'Successfully Created!!'
 			redirect_to tasklist_path(id: @taskli.id)
