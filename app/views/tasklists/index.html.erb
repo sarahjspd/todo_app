@@ -1,12 +1,9 @@
-<% if flash[:notice] %>
 
-<div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
-<% end %>
 <table class="table table-hover">
 	<thead>
 		<th>Tasklist Name</th>
 		<th>Due Date</th>
-
+		<th>Update History</th>
 	</thead>
 	
 	<tbody>
@@ -16,6 +13,7 @@
 		<tr>
 			<td><%= taskli.tasklistname %></td>
 			<td><%= taskli.duedate %></td>
+			<td><%= taskli.updated_at.localtime %></td>
 			<td><div class="buttons"><%= link_to "View", tasklist_path(id: taskli.id) %></div></td>
 			<td><div class="buttons"><%= link_to "Edit", edit_tasklist_path(id: taskli.id) %></div></td>
 			<td><div class="buttons"><%= link_to "Delete", tasklist_path(id: taskli.id), method: :delete %></div></td>

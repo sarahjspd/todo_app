@@ -1,6 +1,4 @@
-<% if flash[:notice] %>
-<div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
-<% end %>
+
 <h3>Edit Me...</h3>
 
 <%= form_for @tas, url: tasklist_task_path(tasklist_id: @taskli.id), method: :put do |f| %>

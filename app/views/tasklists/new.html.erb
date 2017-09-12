@@ -1,6 +1,4 @@
-<% if flash[:notice] %>
-<div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
-<% end %>
+
 <h3>It's Time to Create a Tasklist...</h3>
 
 	<%= form_for @taskli, url: tasklists_path, method: :post do |f| %>

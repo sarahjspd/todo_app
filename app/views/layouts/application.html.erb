@@ -9,7 +9,39 @@
   </head>
 
   <body>
+    <ul class="nav nav-tabs">
+      <li role="presentation", class= <%= current_class?(tasklists_path)%> ><%= link_to "Tasklists", tasklists_path   %></li>
+      <li role="presentation", class= <%=current_class?(new_tasklist_path)%> ><%= link_to "New Tasklist", new_tasklist_path   %></li>
+<!-- 
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul> -->
 
+<!--       <li class="active"><a href="/tasks">Overview</a></li>
+ -->
+    </ul>
+    </nav>
+
+    <p class="navbar-text pull-right">
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
+    </p>
+
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
 	
 
     <%= yield %>

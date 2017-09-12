@@ -3,6 +3,7 @@ class TasklistsController < ApplicationController
 	def index
 		@taskli = Tasklist.all
 		@tas = Task.all
+
 	end
 
 	def new
